@@ -42,7 +42,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="form">
         <div>SIGN UP FOR QUICKJOIN</div>
         <br />
         <form onSubmit={this.handleSubmit}>        

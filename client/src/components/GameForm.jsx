@@ -75,8 +75,8 @@ class GameForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>QUICKJOIN</div>
+      <div className="form">
+        <div className="title">QuickJoin</div>
           <form onSubmit={this.handleSubmit.bind(this)}>
             <label>
               <br />

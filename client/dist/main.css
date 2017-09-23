@@ -59,3 +59,18 @@ table {
 body {
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.form {
+  color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Quicksand', sans-serif;
+  color: red;
+  font-size: 40px;
+  font-weight: 600;
+}
