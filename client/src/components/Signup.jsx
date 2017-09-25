@@ -9,7 +9,7 @@ class Signup extends React.Component {
     super(props);
     this.state = {
       usernameTaken: false,
-      signedIn: false
+      signedIn: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePost = this.handlePost.bind(this);
@@ -19,7 +19,7 @@ class Signup extends React.Component {
     axios({
       method: 'POST',
       url: '/signup',
-      data: userObj
+      data: userObj,
     })
     .then((res) => {
       console.log('ran post request for submitting signup info on front end', res.data);
@@ -47,15 +47,15 @@ class Signup extends React.Component {
         <br />
         <form onSubmit={this.handleSubmit}>        
           <label>
-          <br />
-          <div>Choose username wisely</div>
-          <input id="signupUsername" type="text" autoFocus placeholder="choose username wisely" ref="username" />
-          <br />
-          <br />
-          <div>Create a password</div>
-          <input id="signupPassword" type="password" placeholder="enter a good password" ref="password" />
-          <br />
-          <input type="submit" value="Submit" />
+            <br />
+            <div>Choose username wisely</div>
+            <input id="signupUsername" type="text" autoFocus placeholder="choose username wisely" ref="username" />
+            <br />
+            <br />
+            <div>Create a password</div>
+            <input id="signupPassword" type="password" placeholder="enter a good password" ref="password" />
+            <br />
+            <input type="submit" value="Submit" />
           </label>
         </form>
         <br />

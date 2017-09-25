@@ -20,7 +20,7 @@ class Login extends React.Component {
     axios({
       method: 'POST',
       url: '/login',
-      data: userObj
+      data: userObj,
     })
     .then((res) => {
       console.log('ran post request for submitting login info on front end', res.data);
@@ -34,7 +34,7 @@ class Login extends React.Component {
     var password = this.refs.password.value;
     var userObj = {
       username: username,
-      password: password
+      password: password,
     }
     this.handlePost(userObj);
     //check if usename exists

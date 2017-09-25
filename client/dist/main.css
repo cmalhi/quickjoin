@@ -57,11 +57,13 @@ table {
 }
 
 body {
-  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'Comfortaa', cursive;
+  background-color: #262626;
 }
 
 .form {
-  color: orange;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +72,7 @@ body {
 
 .title {
   font-family: 'Quicksand', sans-serif;
-  color: red;
+  color: orange;
   font-size: 40px;
   font-weight: 600;
 }
