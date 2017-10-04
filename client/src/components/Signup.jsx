@@ -42,25 +42,27 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="form">
-        <div>SIGN UP FOR QUICKJOIN</div>
-        <br />
-        <form onSubmit={this.handleSubmit}>        
-          <label>
-            <br />
-            <div>Choose username wisely</div>
-            <input id="signupUsername" type="text" autoFocus placeholder="choose username wisely" ref="username" />
-            <br />
-            <br />
-            <div>Create a password</div>
-            <input id="signupPassword" type="password" placeholder="enter a good password" ref="password" />
-            <br />
-            <input type="submit" value="Submit" />
-          </label>
-        </form>
-        <br />
-        <button><Link to="/Login">Login</Link></button>
-        <br />
+      <div className="form-container">
+        <div className="form">
+          <div>SIGN UP FOR QUICKJOIN</div>
+          <br />
+          <form onSubmit={this.handleSubmit}>        
+            <label>
+              <br />
+              <div>Choose username wisely</div>
+              <input id="signupUsername" type="text" autoFocus placeholder="choose username wisely" ref="username" />
+              <br />
+              <br />
+              <div>Create a password</div>
+              <input id="signupPassword" type="password" placeholder="enter a good password" ref="password" />
+              <br />
+              <input type="submit" value="Submit" />
+            </label>
+          </form>
+          <br />
+          <button><Link to="/Login">Login</Link></button>
+          <br />
+        </div>
       </div>
     );
   }

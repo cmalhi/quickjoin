@@ -45,25 +45,27 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className=" form">
-        <div className="login-title">LOG INTO QUICKJOIN</div>
-        <br />
-        <form onSubmit={this.handleSubmit} className="login-form">        
-          <label>
-            <br />
-            <div className="login-form-text">Enter your username</div>
-            <input id="loginUsername" type="text" autoFocus placeholder="enter your username" ref="username" />
-            <br />
-            <br />
-            <div className="login-form-text">Enter your password</div>
-            <input id="loginPassword" type="password" placeholder="enter your password" ref="password" />
-            <br />
-            <input type="submit" value="Submit" className="login-submit"/>
-          </label>
-        </form>
-        <br />
-        <button><Link to="/Signup">Signup</Link></button>
-        <br />
+      <div className="form-container">
+        <div className=" form">
+          <div className="login-title">LOG INTO QUICKJOIN</div>
+          <br />
+          <form onSubmit={this.handleSubmit} className="login-form">        
+            <label>
+              <br />
+              <div className="login-form-text">Enter your username</div>
+              <input id="loginUsername" type="text" autoFocus placeholder="enter your username" ref="username" />
+              <br />
+              <br />
+              <div className="login-form-text">Enter your password</div>
+              <input id="loginPassword" type="password" placeholder="enter your password" ref="password" />
+              <br />
+              <input type="submit" value="Submit" className="login-submit"/>
+            </label>
+          </form>
+          <br />
+          <button><Link to="/Signup">Signup</Link></button>
+          <br />
+        </div>
       </div>
     )
   }

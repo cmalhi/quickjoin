@@ -77,41 +77,42 @@ class GameForm extends React.Component {
     return (
       <div className="form-container">
         <div className="form">
-          <div className="title">QuickJoin</div>
-            <form onSubmit={this.handleSubmit.bind(this)}>
-              <label>
-                <br />
-                <div className="form-element">
-                  <div>What game are you about to play?</div>
-                  <input id= "newGameName" type="text" placeholder="Enter name of game" autoFocus ref="name" />
-                </div>
-                <br />
-                <div className="form-element">
-                  <div>What gaming system are you using?</div>
-                  <input id= "newGameSystem" type="text" placeholder="Enter name of gaming system" ref="system" />
-                </div>
-                <br />
-                <div className="form-element">
-                  <div>Do you have a mic?</div>
-                  <input id= "newGameMic" type="text" placeholder="Are you using a mic" ref="mic" />
-                </div>
-                <br />
-                <div className="form-element">
-                  <div>Gamertag</div>
-                  <input id= "newGameGamerTag" type="text" placeholder="Gamertag" ref="gamertag" />
-                </div>
-                <br />                              
-                <input type="submit" value="Submit" />
-              </label>
-            </form>
-            <div>
-            <br />
-            Click here to check for matches
-            <br />
-            <button><Link to="/Match">Match</Link></button>
-          </div>
+        <div>SEARCH FOR PLAYERS</div>
+        <br />
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <label>
+              <br />
+              <div className="form-element">
+                <div>What game are you about to play?</div>
+                <input id= "newGameName" type="text" placeholder="Enter name of game" autoFocus ref="name" />
+              </div>
+              <br />
+              <div className="form-element">
+                <div>What gaming system are you using?</div>
+                <input id= "newGameSystem" type="text" placeholder="Enter name of gaming system" ref="system" />
+              </div>
+              <br />
+              <div className="form-element">
+                <div>Do you have a mic?</div>
+                <input id= "newGameMic" type="text" placeholder="Are you using a mic" ref="mic" />
+              </div>
+              <br />
+              <div className="form-element">
+                <div>Gamertag</div>
+                <input id= "newGameGamerTag" type="text" placeholder="Gamertag" ref="gamertag" />
+              </div>
+              <br />                              
+              <input type="submit" value="Submit" />
+            </label>
+          </form>
+        <div>
+        <br />
+        Click here to check for matches
+        <br />
+        <button><Link to="/Match">Match</Link></button>
         </div>
       </div>
+    </div>
     );
   }
 }

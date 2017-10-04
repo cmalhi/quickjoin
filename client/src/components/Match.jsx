@@ -35,12 +35,14 @@ class Match extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>{this.state.matches.length} hot singles in your area</div>
-        <br />
-        {this.state.matches.map((match, key) => {
-          return <MatchEntry match={match} key={key} />
-        })}
+      <div className="form-container">
+        <div>
+          <div>{this.state.matches.length} hot singles in your area</div>
+          <br />
+          {this.state.matches.map((match, key) => {
+            return <MatchEntry match={match} key={key} />
+          })}
+        </div >
       </div>
       )
   }
