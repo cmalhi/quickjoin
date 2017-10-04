@@ -13,15 +13,27 @@ exports.login = (req, res) => {
   //check if the usrname exists
   getUser(username, (err, userExists) => {
     if (err) throw err;
+    if (!userExists) {
+      badLogin(req, res);
+    }
     if (userExists) {
       //if exists check password
       bcrypt.compare(password, userExists.password)
       .then((matching) => {
-        console.log('THE HASH MATCHED', matching);
-        createSession(req, res, username);
+        console.log('DID THE HASH MATCH?', matching);
+        if (matching) {
+          createSession(req, res, username);
+        } else {
+          badLogin(req, res);
+        }
       })
     }
   });
+}
+
+badLogin = (req, res) => {
+  console.log('bad Login');
+  res.send('Login failed');
 }
 
 createSession = (req, res, user) => {
@@ -32,7 +44,7 @@ createSession = (req, res, user) => {
     //add the user to the session for easy access when doing match requests.
     //add user to newGame schema so that you can reject your own results when filtering.
     console.log('a new session was created by', user)
-    res.send('a session was created')
+    res.send(req.session)
   })
 }
 

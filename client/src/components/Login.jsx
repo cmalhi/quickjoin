@@ -48,7 +48,6 @@ class Login extends React.Component {
       <div className="form-container">
         <div className=" form">
           <div className="form-title">LOG INTO QUICKJOIN</div>
-          <br />
           <form onSubmit={this.handleSubmit} className="login-form">        
             <label>
               <br />

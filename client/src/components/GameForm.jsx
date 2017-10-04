@@ -1,21 +1,42 @@
 import React from 'react';
 import axios from 'axios';
 import Match from './Match.jsx';
+import config from '../../../config';
+// import igdb from 'igdb-api-node';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
+
+const client = igdb(config.IGDBKey);
 
 class GameForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      games: null,
     };
     this.handlePost = this.handlePost.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMatchGet = this.handleMatchGet.bind(this);
+    this.handleGameAPICall = this.handleGameAPICall.bind(this);
   }
 
   componentDidMount() {
     console.log('gameform')
+    // this.handleGameAPICall();
+  }
+
+  handleGameAPICall() {
+    client.games({
+        fields: '*', // Return all fields
+        limit: 5, // Limit to 5 results
+        offset: 15 // Index offset for results
+    }).then(response => {
+        // response.body contains the parsed JSON response to this query
+        console.log('response form api call');
+        this.setState({games: response.data})
+    }).catch(error => {
+        throw error;
+    });
   }
 
   handleMatchGet(gamePostObj) {
@@ -78,7 +99,6 @@ class GameForm extends React.Component {
       <div className="form-container">
         <div className="form">
         <div className="form-title">SEARCH FOR PLAYERS</div>
-        <br />
           <form onSubmit={this.handleSubmit.bind(this)}>
             <label>
               <br />

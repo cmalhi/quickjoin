@@ -45,7 +45,6 @@ class Signup extends React.Component {
       <div className="form-container">
         <div className="form">
           <div className="form-title">SIGN UP FOR QUICKJOIN</div>
-          <br />
           <form onSubmit={this.handleSubmit}>        
             <label>
               <br />

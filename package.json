@@ -19,6 +19,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-session": "^1.15.5",
+    "igdb-api-node": "^3.0.2",
     "live-server": "^1.2.0",
     "mongoose": "^4.11.6",
     "path": "^0.12.7",
