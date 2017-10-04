@@ -2,10 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import Match from './Match.jsx';
 import config from '../../../config';
-// import igdb from 'igdb-api-node';
+import igdb from 'igdb-api-node';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 
-const client = igdb(config.IGDBKey);
+global['3scaleKey'] = config.IGDBKey;
+const client = igdb();
 
 class GameForm extends React.Component {
   constructor(props) {
@@ -22,21 +23,17 @@ class GameForm extends React.Component {
 
   componentDidMount() {
     console.log('gameform')
-    // this.handleGameAPICall();
+    this.handleGameAPICall();
   }
 
   handleGameAPICall() {
-    client.games({
-        fields: '*', // Return all fields
-        limit: 5, // Limit to 5 results
-        offset: 15 // Index offset for results
-    }).then(response => {
-        // response.body contains the parsed JSON response to this query
-        console.log('response form api call');
-        this.setState({games: response.data})
-    }).catch(error => {
-        throw error;
-    });
+    axios({
+      method: 'GET',
+      url: '/gamesapi',
+    })
+    .then((res) => {
+      console.log('ran get request for getting match on front end', res.data);
+    })
   }
 
   handleMatchGet(gamePostObj) {

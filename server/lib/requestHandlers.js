@@ -1,3 +1,5 @@
+var igdb = require('igdb-api-node');
+var config = require('../../config');
 var db = require('../../db/index');
 var { promisify } = require('bluebird');
 var bcrypt = require('bcrypt');
@@ -5,6 +7,9 @@ var bcrypt = require('bcrypt');
 var promisifiedFind = promisify(db.users.findOne.bind(db));
 var sessionUser;
 //if there is a session go directly to /GameForm
+
+global['3scaleKey'] = config.IGDBKey;
+const client = igdb();
 
 exports.login = (req, res) => {
   //extract user
@@ -141,5 +146,19 @@ exports.getMatches = (req, res) => {
   })
   //find all games that match without the username matching 
   //filter out and send all the games that are the same not by the user
+}
+
+exports.getGamesFromAPI = (req, res) => {
+  client.games({
+      fields: '*', // Return all fields
+      limit: 5, // Limit to 5 results
+      offset: 15 // Index offset for results
+  }).then(res => {
+      // response.body contains the parsed JSON response to this query
+      console.log('response form api call');
+      res.send(res.data)
+  }).catch(error => {
+      throw error;
+  });
 }
 

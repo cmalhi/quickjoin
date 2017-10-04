@@ -9,4 +9,6 @@ router.post('/handlesignup', requestHandler.signup);
 
 router.get('/handlematch', requestHandler.getMatches);
 
+router.get('/gamesapi', requestHandler.getGamesFromAPI);
+
 module.exports = router;
