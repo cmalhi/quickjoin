@@ -19,7 +19,7 @@ class Login extends React.Component {
   handlePost(userObj) {
     axios({
       method: 'POST',
-      url: '/login',
+      url: '/handlelogin',
       data: userObj,
     })
     .then((res) => {
@@ -47,7 +47,7 @@ class Login extends React.Component {
     return (
       <div className="form-container">
         <div className=" form">
-          <div className="login-title">LOG INTO QUICKJOIN</div>
+          <div className="form-title">LOG INTO QUICKJOIN</div>
           <br />
           <form onSubmit={this.handleSubmit} className="login-form">        
             <label>

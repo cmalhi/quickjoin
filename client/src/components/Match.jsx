@@ -18,7 +18,7 @@ class Match extends React.Component {
   handleMatchGet() {
     axios({
       method: 'GET',
-      url: '/match',
+      url: '/handlematch',
     })
     .then((res) => {
       console.log('ran get request for getting match on front end', res.data);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 import App from './App.jsx';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx';
@@ -13,11 +13,23 @@ class Nav extends React.Component {
       <Router>
         <div>
           <div className="nav">
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-            <Link to="/gameform">GameForm</Link>
-            <Link to="/match">Match</Link>
+            <div className="nav-entry">
+              <Link to="/login">Login</Link>
+            </div>
+            <div className="nav-entry">
+              <Link to="/signup">Signup</Link>
+            </div>
+            <div className="nav-entry">
+              <Link to="/gameform">GameForm</Link>
+            </div>
+            <div className="nav-entry">
+              <Link to="/match">Match</Link>
+            </div>
           </div>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/gameForm" component={GameForm} />
+          <Route path="/match" render={()=> <Match />} />
         </div>
       </Router>
     );

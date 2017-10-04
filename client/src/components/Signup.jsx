@@ -18,7 +18,7 @@ class Signup extends React.Component {
   handlePost(userObj) {
     axios({
       method: 'POST',
-      url: '/signup',
+      url: '/handlesignup',
       data: userObj,
     })
     .then((res) => {
@@ -44,7 +44,7 @@ class Signup extends React.Component {
     return (
       <div className="form-container">
         <div className="form">
-          <div>SIGN UP FOR QUICKJOIN</div>
+          <div className="form-title">SIGN UP FOR QUICKJOIN</div>
           <br />
           <form onSubmit={this.handleSubmit}>        
             <label>

@@ -77,7 +77,7 @@ class GameForm extends React.Component {
     return (
       <div className="form-container">
         <div className="form">
-        <div>SEARCH FOR PLAYERS</div>
+        <div className="form-title">SEARCH FOR PLAYERS</div>
         <br />
           <form onSubmit={this.handleSubmit.bind(this)}>
             <label>
