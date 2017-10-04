@@ -62,17 +62,32 @@ body {
   background-color: #262626;
 }
 
+.form-container {
+  padding: 4%;
+}
+
 .form {
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  line-height: 1.75em;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 6px solid yellow;
+  padding: 4%;
 }
 
 .title {
-  font-family: 'Quicksand', sans-serif;
-  color: orange;
-  font-size: 40px;
-  font-weight: 600;
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 6em;
+  font-weight: 400;
+  margin-bottom: 5%;
+  text-shadow: 3px 2px maroon;
+}
+
+.form-element {
+
 }
