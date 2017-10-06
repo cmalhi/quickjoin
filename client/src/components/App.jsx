@@ -5,7 +5,8 @@ import Signup from './Signup.jsx';
 import GameForm from './GameForm.jsx';
 import Match from './Match.jsx';
 import Nav from './Nav.jsx';
-import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './Home.jsx';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -18,19 +19,21 @@ class App extends React.Component {
   }
 
   render() {
-      return(
+    return(
+      <div>
+        <div className="title">QuickJoin</div>
         <BrowserRouter>
-          <div>
-            <div className="title">QuickJoin</div>
-            <Route component={Nav} />
-            <Route path='/home' render={() => <h1>Replace me with a home page description</h1>}/>
+          <Switch>
+            <Route classNam="link" path='/' component={Nav} />
+            <Route path='/home' component={Home}/>
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/gameform' component={GameForm} />
             <Route path='/match' component={Match} />
-          </div>
+          </Switch>
         </BrowserRouter>
-      ) 
+      </div>
+    ) 
   }
 }
 

@@ -9,7 +9,7 @@ var sessionUser;
 //if there is a session go directly to /GameForm
 
 global['3scaleKey'] = config.IGDBKey;
-const client = igdb();
+// const client = igdb();
 
 exports.login = (req, res) => {
   //extract user

@@ -10,7 +10,8 @@ class Login extends React.Component {
     super(props);
     this.state = {
       usernameTaken: false,
-      signedIn: false
+      signedIn: false,
+      badLogin: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePpost = this.handlePost.bind(this);
@@ -24,6 +25,9 @@ class Login extends React.Component {
     })
     .then((res) => {
       console.log('ran post request for submitting login info on front end', res.data);
+      if (res.data === 'Login failed') {
+        this.setState({badLogin: true})
+      }
     })
   }
 
@@ -58,6 +62,7 @@ class Login extends React.Component {
               <div className="login-form-text">Enter your password</div>
               <input id="loginPassword" type="password" placeholder="enter your password" ref="password" />
               <br />
+              {this.state.badLogin && <div style={{color: 'red'}}>Incorrect username or password.</div>}
               <input type="submit" value="Submit" className="login-submit"/>
             </label>
           </form>

@@ -5,6 +5,7 @@ import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 import GameForm from './GameForm.jsx';
 import Match from './Match.jsx';
+import Home from './Home.jsx';
 
 class Nav extends React.Component {
 
@@ -14,22 +15,30 @@ class Nav extends React.Component {
         <div>
           <div className="nav">
             <div className="nav-entry">
+              <Link to="/home">Home</Link>
+            </div>
+            <div className="nav-entry">
+              <Link to="/gameform">GameForm</Link> 
+            </div>
+            <div className="nav-entry">
+              <Link to="/match">Match</Link>
+            </div>
+            <div className="nav-entry">
               <Link to="/login">Login</Link>
             </div>
             <div className="nav-entry">
               <Link to="/signup">Signup</Link>
             </div>
             <div className="nav-entry">
-              <Link to="/gameform">GameForm</Link>
-            </div>
-            <div className="nav-entry">
-              <Link to="/match">Match</Link>
+              <Link to="/logout">Logout</Link>
             </div>
           </div>
+          <Route path="/Home" component={Home} />
+          <Route path="/gameForm" component={GameForm} />
+          <Route path="/match" component={Match} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/gameForm" component={GameForm} />
-          <Route path="/match" render={()=> <Match />} />
+          <Route path="/logout" />
         </div>
       </Router>
     );
@@ -37,3 +46,8 @@ class Nav extends React.Component {
 }
 
 export default Nav;
+
+
+//TODO: 
+//logout route/handler
+//home component
